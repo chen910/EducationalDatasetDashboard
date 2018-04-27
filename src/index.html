@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Chen Xu">
+    <meta name="description" content="DataSets Dashboard">
+    <title>Dashboard</title>
+    <link rel="shortcut icon" type="image/png" href="assets/images/university.png">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+    <script type="text/javascript" src="libraries/dataframe-min.js"></script>
+    <script type="text/javascript" src="libraries/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="libraries/datatables.min.js"></script>
+    <script type="text/javascript" src="libraries/Chart.min.js"></script>
+
+
+    <script src="components/App.js"></script>
+    <script src="components/Chart.js"></script>
+    <script src="components/Filter.js"></script>
+    <script src="components/Table.js"></script>
+    <script src="constants.js"></script>
+</head>
+<body>
+<header class="top-header">
+    <H1>DATASETS DASHBOARD</H1>
+</header>
+<header class="main-header">
+    <h2>Select Dataset:</h2>
+</header>
+<section class="main-section">
+    <nav class="main-nav">
+        <ul>
+            <li>
+                <a class="hover-button" href="#" id="libraryBtn">Library</a>
+            </li>
+            <li>
+                <a class="hover-button" href="#" id="WIFIBtn">Library WIFI usage</a>
+            </li>
+            <li>
+                <a class="hover-button" href="#" id="eschoolBtn">Elementary school</a>
+            </li>
+            <li>
+                <a class="hover-button" href="#" id="hschoolButn">High school</a>
+            </li>
+            <li>
+                <a class="hover-button" href="#" id="dschoolBtn">Deprecated school</a>
+            </li>
+        </ul>
+    </nav>
+    <br>
+    <div id="table"></div>
+    <div id="columnFilter"></div>
+    <div id="rowFilter"></div>
+    <div id="chartFilter"></div>
+    <canvas id="myChart" width="400" height="400"></canvas>
+</section>
+<footer>
+    <p class="title">Spring 2018 UML Team #5</p>
+    <ul>
+        <li>
+            <p>A20377739 Chen Xu</p>
+        </li>
+        <li>
+            <p>A20385903 Yifan Xu</p>
+        </li>
+        <li>
+            <p>A20383068 Silin Huang</p>
+        </li>
+    </ul>
+</footer>
+</body>
+</html>
