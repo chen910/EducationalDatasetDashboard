@@ -40,14 +40,13 @@ let makeRowData = (row, columnindex) => {
         }
     }
     // console.log(countedRow);
-return countedRow;
+    return countedRow;
 }
 let makeRowFilter = (row, colBox) => {
     let countedRowObjectList = [];
     let myDiv = "";
     myDiv += `
         <p>Please Select the Data you want to plot(Rows)</p>
-        <button class="filterBtn" id='rowFilterBtn'>Apply Row Filter</button>
         <div align="center" id="categorical-filter-checkbox" style="display:flex; flex-flow:row wrap;">
     `;
 
@@ -66,13 +65,17 @@ let makeRowFilter = (row, colBox) => {
             }
         }
         myDiv +=`
-                        </select>
-                    </label>
-                </div>
+                    </select>
+                </label>
+            </div>
         `;
         countedRowObjectList.push(countedRow);
     }
-
+    myDiv +=`
+        </div>
+        <button class="filterBtn" id='rowFilterBtn'>Apply Row Filter</button>
+        <br>
+    `;
     document.getElementById("rowFilter").innerHTML = myDiv;
     addChartFilterListener();
 }
@@ -87,7 +90,7 @@ let makeChartFilter = () => {
     let myDiv = "";
     myDiv +=`
         <p>Please Select the Chart Type</p>
-        <button id="applyChart" class="filterBtn">Apply Chart</button>
+        
         <div align="left">
             <select id="selectChart" class="select-style">
             <option value="bar">Bar</option>
@@ -97,6 +100,8 @@ let makeChartFilter = () => {
             </select>
 
         </div>
+        <button id="applyChart" class="filterBtn">Apply Chart</button>
+        <br>
     `
     document.getElementById("chartFilter").innerHTML = myDiv;
     addApplyChartListener();

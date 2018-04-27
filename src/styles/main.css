@@ -71,9 +71,6 @@ li {
     color: black;
 }
 
-label {
-    /*color: white;*/
-}
 section p {
     font-weight: bold;
     color: white;
@@ -84,18 +81,21 @@ section p {
 .filterBtn {
     width: 10%;
     float: right;
+    display: block;
     /*margin-right:20%;*/
 }
-.chartFilter {
-    display: block;
-}
-#myChart {
+
+#chartContainer {
     display: none;
     background: white;
+    width: 66%;
+    padding: 20px;
+    margin: auto;
 }
 
 #table {
     background-color: white;
+    text-align: center;
 }
 footer {
     background: #434343;

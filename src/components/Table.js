@@ -1,7 +1,7 @@
 function drawTable(df) {
     let row = df.toArray();
     let column = df.listColumns();
-    // align='left' style='display: block; overflow-y: auto; overflow-x: visible;' cellspacing='0'
+
     let displayTable = "<table id='dataTable' class='display' style='width:100%'><thead><tr>";
     for (let i =0; i < column.length; i++) {
         displayTable+= "<th>" +column[i]+ "</th>";

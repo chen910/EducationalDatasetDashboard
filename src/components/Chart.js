@@ -1,5 +1,9 @@
 function drawChart() {
-    let ctx = document.getElementById("myChart");
+    let ctx = document.getElementById("barChart");
+    let chartContainer = document.getElementById("chartContainer");
+
+    chartContainer.style.display = "flex";
+
     let myChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -36,4 +40,5 @@ function drawChart() {
             }
         }
     });
+    // ctx.style.display = "block";
 }
