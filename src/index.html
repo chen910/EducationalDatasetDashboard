@@ -13,12 +13,19 @@
     <script type="text/javascript" src="libraries/datatables.min.js"></script>
     <script type="text/javascript" src="libraries/Chart.min.js"></script>
 
+    <script src="constants.js"></script>
 
     <script src="components/App.js"></script>
-    <script src="components/Chart.js"></script>
-    <script src="components/Filter.js"></script>
     <script src="components/Table.js"></script>
-    <script src="constants.js"></script>
+    <script src="components/ColumnFilter.js"></script>
+    <script src="components/RowFilter.js"></script>
+    <script src="components/ChartFilter.js"></script>
+    <script src="components/ChartFactory.js"></script>
+    <script src="components/BarChart.js"></script>
+    <script src="components/LineChart.js"></script>
+    <script src="components/PieChart.js"></script>
+    <script src="components/DoughnutChart.js"></script>
+    <script src="components/StackChart.js"></script>
 </head>
 <body>
 <header class="top-header">
@@ -40,7 +47,7 @@
                 <a class="hover-button" id="eschoolBtn">Elementary school</a>
             </li>
             <li>
-                <a class="hover-button" id="hschoolButn">High school</a>
+                <a class="hover-button" id="hschoolBtn">High school</a>
             </li>
             <li>
                 <a class="hover-button" id="dschoolBtn">Deprecated school</a>
@@ -53,7 +60,11 @@
     <div id="rowFilter"></div>
     <div id="chartFilter"></div>
     <div id="chartContainer">
-        <canvas id="barChart"></canvas>
+        <!--<canvas id="barChart"></canvas>-->
+        <!--<canvas id="lineChart"></canvas>-->
+        <!--<canvas id="pieChart"></canvas>-->
+        <!--<canvas id="doughnutChart"></canvas>-->
+        <!--<canvas id="stackChart"></canvas>-->
     </div>
 </section>
 <footer>

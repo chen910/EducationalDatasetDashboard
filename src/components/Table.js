@@ -1,4 +1,4 @@
-function drawTable(df) {
+let  drawTable = (df) => {
     let row = df.toArray();
     let column = df.listColumns();
 
