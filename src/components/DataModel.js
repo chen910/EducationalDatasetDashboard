@@ -10,52 +10,34 @@ let makeRowData = (row, columnIndex) => {
     // console.log(countedRow);
     return countedRow;
 }
-let makeRowFilter = (row, colBox) => {
-    let countedRowList = [];
-    let myDiv = "";
-    myDiv += `
-        <p>Please Select the Data you want to plot(Rows)</p>
-        <div align="center" id="categorical-filter-checkbox" style="display:flex; flex-flow:row wrap;">
-    `;
 
-    for (let i = 0; i < colBox.length; i++) {
-        let countedRow = makeRowData(row, colBox[i][0]);
-        myDiv += `
-            <div style="margin-top: 14px; margin-right: 24px;">
-                <label for="id">${colBox[i][1]}<br>
-                    <select id="${colBox[i][1]}" multiple="multiple" size='6' style="width: 240px; overflow-x: auto;">
-            `;
-        for (let property in countedRow) {
-            if (countedRow.hasOwnProperty(property)) {
-                myDiv +=`
-                    <option value="${property}">${property}</option>
-                `;
+
+let makeChartData = (checkedRowBox, countedRowList) => {
+    let chartData = new Object();
+    checkedRowBox.forEach((checkedBox) => {
+        // console.log(checkedBox);
+        for(let i=0; i< countedRowList.length; i++) {
+            if(countedRowList[i][checkedBox]) {
+                chartData[checkedBox] = countedRowList[i][checkedBox];
             }
         }
-        myDiv +=`
-                    </select>
-                </label>
-            </div>
-        `;
-        countedRowList.push(countedRow);
-    }
-    myDiv +=`
-        </div>
-        <button class="filterBtn" id='rowFilterBtn'>Apply Row Filter</button>
-        <br>
-        <br>
-    `;
-    // console.log(countedRowList);
-    document.getElementById("rowFilter").innerHTML = myDiv;
-    addRowFilterListener(countedRowList);
+    })
+    // console.log(chartData);
+    return chartData;
 }
 
-let addRowFilterListener = (countedRowList) => {
-    document.getElementById('rowFilterBtn').addEventListener('click', () => {
-        let checkedRowBox = getSelectedRow();
-        makeChartFilter(checkedRowBox, countedRowList);
-    });
+let getSelectedColumn = () => {
+    let colBox = [];
+    let selectedBox = document.querySelectorAll(".columnCheckbox");
+    for (let i = 0; i < selectedBox.length; i++) {
+        if (selectedBox[i].type === 'checkbox' && selectedBox[i].checked === true) {
+            colBox.push([i, selectedBox[i].value]);
+        }
+    }
+    // console.log(colBox);
+    return colBox;
 }
+
 let getSelectedRow = () => {
     let selectedRow = [];
     // let selectedCatColumnValueMap = new Map();
@@ -98,6 +80,3 @@ let getSelectedRow = () => {
 
     return selectedRow;
 }
-
-
-

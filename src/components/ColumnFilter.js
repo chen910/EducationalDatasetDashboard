@@ -23,14 +23,3 @@ let addColFilterListener = (row) => {
     });
 }
 
-let getSelectedColumn = () => {
-    let colBox = [];
-    let selectedBox = document.querySelectorAll(".columnCheckbox");
-    for (let i = 0; i < selectedBox.length; i++) {
-        if (selectedBox[i].type === 'checkbox' && selectedBox[i].checked === true) {
-            colBox.push([i, selectedBox[i].value]);
-        }
-    }
-    // console.log(colBox);
-    return colBox;
-}

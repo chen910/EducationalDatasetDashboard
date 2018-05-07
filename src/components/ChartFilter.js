@@ -38,19 +38,7 @@ let getChartTypeSelection = () => {
     return chartType;
 }
 
-let makeChartData = (checkedRowBox, countedRowList) => {
-    let chartData = new Object();
-    checkedRowBox.forEach((checkedBox) => {
-        // console.log(checkedBox);
-        for(let i=0; i< countedRowList.length; i++) {
-            if(countedRowList[i][checkedBox]) {
-                chartData[checkedBox] = countedRowList[i][checkedBox];
-            }
-        }
-        })
-    // console.log(chartData);
-    return chartData;
-}
+
 
 let resetCanvas = () => {
     document.getElementById('chartContainer').innerHTML = `

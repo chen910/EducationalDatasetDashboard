@@ -1,11 +1,11 @@
 let DataFrame = dfjs.DataFrame;
 
 window.onload=function(){
-    addTableListener('libraryBtn', LIBRARY_URL)
-    addTableListener('WIFIBtn', WIFI_URL)
-    addTableListener('eschoolBtn', ESCHOOL_URL)
-    addTableListener('hschoolBtn', HSCHOOL_URL)
-    addTableListener('dschoolBtn', DSCHOOL_URL)
+    addTableListener('schoolBtn', SCHOOL_URL);
+    addTableListener('cwurBtn', CWUR_URL);
+    addTableListener('sjtuBtn', SJTU_URL);
+    addTableListener('timesBtn', TIMES_URL);
+    addTableListener('OECDBtn', OECD_URL);
 }
 
 let addTableListener= (btnName, datasetName) => {
